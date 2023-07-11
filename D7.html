@@ -104,7 +104,6 @@
       const changePcontent = function () {
         let pContent = document.querySelectorAll("div p");
         console.log(pContent);
-        pContent = Array.from(pContent);
         pContent.forEach((content) => {
           content.innerText = "Cambio p Figli Di Div";
         });
@@ -117,8 +116,8 @@
                     */
 
       const changeUrls = function () {
-        const newUrls = document.querySelector("a");
-        newUrls.setAttribute("href", "https://www.google.com");
+        let newUrls = document.querySelectorAll("a:not(footer a)");
+        newUrls.forEach((urls) => urls.setAttribute("href", "https://www.google.com"));
         console.log(newUrls);
       };
       changeUrls();
@@ -186,7 +185,7 @@
                      Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
                     */
 
-      const revealFooterLink = function () {
+      /* const revealFooterLink = function () {
         let alertFooter = document.querySelector("footer");
         alertFooter.setAttribute(
           "a",
